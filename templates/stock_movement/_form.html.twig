@@ -1,0 +1,85 @@
+{{ form_start(form, {
+    'attr': {
+        'class': 'space-y-6'
+    }
+}) }}
+
+<div>
+    {{ form_label(form.type, 'Type de mouvement', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.type, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
+        }
+    }) }}
+
+    {{ form_errors(form.type) }}
+</div>
+
+<div>
+    {{ form_label(form.product, 'Produit', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.product, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
+        }
+    }) }}
+
+    {{ form_errors(form.product) }}
+</div>
+
+<div>
+    {{ form_label(form.quantity, 'Quantité', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.quantity, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+            'placeholder': 'Ex : 10',
+            'min': '1'
+        }
+    }) }}
+
+    {{ form_errors(form.quantity) }}
+</div>
+
+<div>
+    {{ form_label(form.reason, 'Motif', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.reason, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+            'placeholder': 'Ex : Réception fournisseur'
+        }
+    }) }}
+
+    {{ form_errors(form.reason) }}
+</div>
+
+<div class="flex items-center gap-3 pt-2">
+
+    <button
+        type="submit"
+        class="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    >
+        {{ button_label|default('Enregistrer le mouvement') }}
+    </button>
+
+</div>
+
+{{ form_end(form) }}

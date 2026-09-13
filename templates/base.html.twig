@@ -2,23 +2,100 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <title>{% block title %}StockPro{% endblock %}</title>
+
         {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        {% endblock %}
+    </head>
+
+    <body
+    class="min-h-screen bg-cover bg-center bg-fixed"
+    style="background-image: url('{{ asset('') }}');">
+                <nav class="border-b border-gray-200 bg-white shadow-sm">
+                <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+                    <a
+                        href="{{ path('app_dashboard') }}"
+                        class="text-xl font-bold text-blue-600"
+                    >
+                        StockPro
+                    </a>
+
+                    <div class="flex items-center gap-2">
+
+                        <a
+                            href="{{ path('app_dashboard') }}"
+                            class="rounded-lg px-4 py-2 text-sm font-medium
+                                {% if app.request.attributes.get('_route') == 'app_dashboard' %}
+                                    bg-blue-100 text-blue-700
+                                {% else %}
+                                    text-gray-700 hover:bg-gray-100 hover:text-blue-600
+                                {% endif %}"
+                        >
+                                Dashboard
+                        </a>
+
+                        <a
+                            href="{{ path('app_product_index') }}"
+                            class="rounded-lg px-4 py-2 text-sm font-medium
+                                {% if app.request.attributes.get('_route') starts with 'app_product_' %}
+                                    bg-blue-100 text-blue-700
+                                {% else %}
+                                    text-gray-700 hover:bg-gray-100 hover:text-blue-600
+                                {% endif %}"
+                        >
+                            Produits
+                        </a>
+
+                        <a
+                            href="{{ path('app_category_index') }}"
+                            class="rounded-lg px-4 py-2 text-sm font-medium
+                                {% if app.request.attributes.get('_route') starts with 'app_category_' %}
+                                    bg-blue-100 text-blue-700
+                                {% else %}
+                                    text-gray-700 hover:bg-gray-100 hover:text-blue-600
+                                {% endif %}"
+                        >
+                            Catégories
+                        </a>
+
+                       <a
+                            href="{{ path('app_stock_movement_index') }}"
+                            class="rounded-lg px-4 py-2 text-sm font-medium
+                                {% if app.request.attributes.get('_route') starts with 'app_stock_movement_' %}
+                                    bg-blue-100 text-blue-700
+                                {% else %}
+                                    text-gray-700 hover:bg-gray-100 hover:text-blue-600
+                                {% endif %}"
+                        >
+                            Mouvements de stock
+                        </a>
+
+                    </div>
+
+                </div>
+            </nav>  
+
+            {% for message in app.flashes('success') %}
+                <div class="mx-auto mt-6 max-w-7xl px-6">
+                    <div class="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-green-700">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% for message in app.flashes('error') %}
+                <div class="mx-auto mt-6 max-w-7xl px-6">
+                    <div class="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-700">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% block body %}
         {% endblock %}
 
         {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
-
-        {% set frankenphp_hot_reload = app.request.server.get('FRANKENPHP_HOT_RELOAD') %}
-        {% if frankenphp_hot_reload %}
-        <meta name="frankenphp-hot-reload:url" content="{{ frankenphp_hot_reload }}">
-        <script src="https://cdn.jsdelivr.net/npm/idiomorph"></script>
-        <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
-        {% endif %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
     </body>
 </html>

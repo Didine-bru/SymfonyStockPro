@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau mouvement - StockPro{% endblock %}
+
+{% block body %}
+
+<div class="mx-auto max-w-3xl px-6 py-10">
+
+    <div class="mb-8">
+        <p class="text-sm font-medium text-blue-600">
+            StockPro
+        </p>
+
+        <h1 class="mt-1 text-3xl font-bold text-gray-900">
+            Nouveau mouvement de stock
+        </h1>
+
+        <p class="mt-2 text-gray-600">
+            Enregistrez une entrée ou une sortie de stock.
+        </p>
+    </div>
+
+    <div class="rounded-xl border border-gray-200 bg-white shadow-sm">
+
+        <div class="border-b border-gray-200 px-6 py-5">
+            <h2 class="text-lg font-semibold text-gray-900">
+                Informations du mouvement
+            </h2>
+        </div>
+
+        <div class="px-6 py-6">
+
+            {{ include('stock_movement/_form.html.twig') }}
+
+        </div>
+
+    </div>
+
+    <div class="mt-6">
+        <a
+            href="{{ path('app_stock_movement_index') }}"
+            class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
+        >
+            ← Retour aux mouvements
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

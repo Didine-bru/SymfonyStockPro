@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mouvement #{{ stock_movement.id }} - StockPro{% endblock %}
+
+{% block body %}
+
+<div class="mx-auto max-w-3xl px-6 py-10">
+
+    <div class="mb-8">
+        <p class="text-sm font-medium text-blue-600">
+            StockPro
+        </p>
+
+        <h1 class="mt-1 text-3xl font-bold text-gray-900">
+            Détails du mouvement
+        </h1>
+
+        <p class="mt-2 text-gray-600">
+            Consultez les informations de ce mouvement de stock.
+        </p>
+    </div>
+
+    <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+
+        <div class="flex items-center justify-between border-b border-gray-200 px-6 py-5">
+
+            <h2 class="text-lg font-semibold text-gray-900">
+                Mouvement #{{ stock_movement.id }}
+            </h2>
+
+            {% if stock_movement.type == 'Entrée' %}
+
+                <span class="inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                    Entrée
+                </span>
+
+            {% else %}
+
+                <span class="inline-flex rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-700">
+                    Sortie
+                </span>
+
+            {% endif %}
+
+        </div>
+
+        <div class="divide-y divide-gray-100">
+
+            <div class="grid grid-cols-1 gap-2 px-6 py-5 sm:grid-cols-3">
+                <div class="text-sm font-medium text-gray-500">
+                    Produit
+                </div>
+
+                <div class="font-medium text-gray-900 sm:col-span-2">
+                    {{ stock_movement.product }}
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-2 px-6 py-5 sm:grid-cols-3">
+                <div class="text-sm font-medium text-gray-500">
+                    Quantité
+                </div>
+
+                <div class="font-medium text-gray-900 sm:col-span-2">
+                    {{ stock_movement.quantity }}
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-2 px-6 py-5 sm:grid-cols-3">
+                <div class="text-sm font-medium text-gray-500">
+                    Motif
+                </div>
+
+                <div class="text-gray-700 sm:col-span-2">
+                    {{ stock_movement.reason ?: 'Aucun motif' }}
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-2 px-6 py-5 sm:grid-cols-3">
+                <div class="text-sm font-medium text-gray-500">
+                    Date du mouvement
+                </div>
+
+                <div class="text-gray-700 sm:col-span-2">
+                    {{ stock_movement.createdAt|date('d/m/Y H:i') }}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center gap-3">
+
+        <a
+            href="{{ path('app_stock_movement_index') }}"
+            class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
+        >
+            ← Retour aux mouvements
+        </a>
+
+        <a
+            href="{{ path('app_stock_movement_edit', {'id': stock_movement.id}) }}"
+            class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700"
+        >
+            Modifier
+        </a>
+
+        {{ include('stock_movement/_delete_form.html.twig') }}
+
+    </div>
+
+</div>
+
+{% endblock %}

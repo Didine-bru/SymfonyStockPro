@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le mouvement #{{ stock_movement.id }} - StockPro{% endblock %}
+
+{% block body %}
+
+<div class="mx-auto max-w-3xl px-6 py-10">
+
+    <div class="mb-8">
+        <p class="text-sm font-medium text-blue-600">
+            StockPro
+        </p>
+
+        <h1 class="mt-1 text-3xl font-bold text-gray-900">
+            Modifier le mouvement
+        </h1>
+
+        <p class="mt-2 text-gray-600">
+            Modifiez les informations du mouvement de stock
+            <span class="font-medium text-gray-900">
+                #{{ stock_movement.id }}
+            </span>.
+        </p>
+    </div>
+
+    <div class="rounded-xl border border-gray-200 bg-white shadow-sm">
+
+        <div class="border-b border-gray-200 px-6 py-5">
+            <h2 class="text-lg font-semibold text-gray-900">
+                Informations du mouvement
+            </h2>
+        </div>
+
+        <div class="px-6 py-6">
+
+            {{ include('stock_movement/_form.html.twig', {
+                button_label: 'Enregistrer les modifications'
+            }) }}
+
+        </div>
+
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center gap-3">
+
+        <a
+            href="{{ path('app_stock_movement_index') }}"
+            class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
+        >
+            ← Retour aux mouvements
+        </a>
+
+        <a
+            href="{{ path('app_stock_movement_show', {'id': stock_movement.id}) }}"
+            class="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50"
+        >
+            Voir le mouvement
+        </a>
+
+        {{ include('stock_movement/_delete_form.html.twig') }}
+
+    </div>
+
+</div>
+
+{% endblock %}

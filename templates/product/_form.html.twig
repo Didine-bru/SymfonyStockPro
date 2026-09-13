@@ -1,0 +1,118 @@
+{{ form_start(form, {
+    'attr': {
+        'class': 'space-y-6'
+    }
+}) }}
+
+<div>
+    {{ form_label(form.name, 'Nom du produit', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.name, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+            'placeholder': 'Ex : Clavier USB'
+        }
+    }) }}
+
+    {{ form_errors(form.name) }}
+</div>
+
+<div>
+    {{ form_label(form.description, 'Description', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.description, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+            'placeholder': 'Description du produit'
+        }
+    }) }}
+
+    {{ form_errors(form.description) }}
+</div>
+
+<div>
+    {{ form_label(form.price, 'Prix', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.price, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+            'placeholder': 'Ex : 50000'
+        }
+    }) }}
+
+    {{ form_errors(form.price) }}
+</div>
+
+<div>
+    {{ form_label(form.quantity, 'Quantité', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.quantity, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+            'placeholder': 'Ex : 10'
+        }
+    }) }}
+
+    {{ form_errors(form.quantity) }}
+</div>
+<div>
+    {{ form_label(form.stockInitial, 'Stock initial', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.stockInitial, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
+            'placeholder': 'Ex : 10',
+            'min': '0'
+        }
+    }) }}
+
+    {{ form_errors(form.stockInitial) }}
+</div>
+<div>
+    {{ form_label(form.category, 'Catégorie', {
+        'label_attr': {
+            'class': 'mb-2 block text-sm font-medium text-gray-700'
+        }
+    }) }}
+
+    {{ form_widget(form.category, {
+        'attr': {
+            'class': 'w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-gray-900 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
+        }
+    }) }}
+
+    {{ form_errors(form.category) }}
+</div>
+
+<div class="flex items-center gap-3 pt-2">
+
+    <button
+        type="submit"
+        class="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    >
+        {{ button_label|default('Enregistrer') }}
+    </button>
+
+</div>
+
+{{ form_end(form) }}
