@@ -56,8 +56,7 @@ class CreateUserCommand extends Command
         // Créer l'utilisateur
         $user = new User();
         $user->setEmail($email);
-        $user->setRoles(['ROLE_USER']);
-
+        $user->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
         // Hacher le mot de passe
         $hashedPassword = $this->passwordHasher->hashPassword(
             $user,

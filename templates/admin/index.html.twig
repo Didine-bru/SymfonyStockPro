@@ -1,0 +1,391 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration - StockPro{% endblock %}
+
+{% block body %}
+
+<div class="mx-auto max-w-7xl px-6 py-10">
+
+
+<div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+        <h1 class="text-3xl font-bold text-gray-900">
+            Administration
+        </h1>
+
+        <p class="mt-2 text-gray-600">
+            Gérez et supervisez votre application StockPro.
+        </p>
+    </div>
+
+    <div class="flex items-center gap-2 rounded-lg bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
+        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 3l2.09 6.26L20 10.5l-5.91 1.24L12 18l-2.09-6.26L4 10.5l5.91-1.24L12 3z"/>
+        </svg>
+        Administrateur
+    </div>
+</div>
+
+
+<!-- Statistiques -->
+
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+    <!-- Utilisateurs -->
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
+        <div class="flex items-center justify-between">
+
+            <div>
+                <p class="text-sm font-medium text-gray-500">
+                    Utilisateurs
+                </p>
+
+                <p class="mt-2 text-3xl font-bold text-gray-900">
+                    —
+                </p>
+            </div>
+
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m4-4a4 4 0 100-8 4 4 0 000 8zm6 0a3 3 0 100-6 3 3 0 000 6z"/>
+                </svg>
+
+            </div>
+
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500">
+            Gestion des comptes utilisateurs
+        </p>
+
+    </div>
+
+
+    <!-- Produits -->
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
+        <div class="flex items-center justify-between">
+
+            <div>
+                <p class="text-sm font-medium text-gray-500">
+                    Produits
+                </p>
+
+                <p class="mt-2 text-3xl font-bold text-gray-900">
+                    —
+                </p>
+            </div>
+
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-600">
+
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M3.27 6.96L12 12l8.73-5.04M12 22V12"/>
+                </svg>
+
+            </div>
+
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500">
+            Produits enregistrés dans le stock
+        </p>
+
+    </div>
+
+
+    <!-- Catégories -->
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
+        <div class="flex items-center justify-between">
+
+            <div>
+                <p class="text-sm font-medium text-gray-500">
+                    Catégories
+                </p>
+
+                <p class="mt-2 text-3xl font-bold text-gray-900">
+                    —
+                </p>
+            </div>
+
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-purple-600">
+
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M20.59 13.41L11 3.83A2 2 0 009.59 3H5a2 2 0 00-2 2v4.59A2 2 0 003.59 11l9.58 9.59a2 2 0 002.83 0l4.59-4.59a2 2 0 000-2.83z"/>
+                    <circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/>
+                </svg>
+
+            </div>
+
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500">
+            Catégories de produits
+        </p>
+
+    </div>
+
+
+    <!-- Mouvements -->
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
+        <div class="flex items-center justify-between">
+
+            <div>
+                <p class="text-sm font-medium text-gray-500">
+                    Mouvements
+                </p>
+
+                <p class="mt-2 text-3xl font-bold text-gray-900">
+                    —
+                </p>
+            </div>
+
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600">
+
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 4v5h5M20 20v-5h-5"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M20 9a8 8 0 00-14.9-4M4 15a8 8 0 0014.9 4"/>
+                </svg>
+
+            </div>
+
+        </div>
+
+        <p class="mt-4 text-sm text-gray-500">
+            Mouvements de stock enregistrés
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- Gestion -->
+
+<div class="mt-10">
+
+    <h2 class="text-xl font-bold text-gray-900">
+        Gestion de l'application
+    </h2>
+
+    <p class="mt-2 text-gray-600">
+        Accédez rapidement aux principales fonctionnalités.
+    </p>
+
+</div>
+
+
+<div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+
+    <!-- Utilisateurs -->
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-blue-600">
+
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m4-4a4 4 0 100-8 4 4 0 000 8zm6 0a3 3 0 100-6 3 3 0 000 6z"/>
+            </svg>
+
+        </div>
+
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">
+            Utilisateurs
+        </h3>
+
+        <p class="mt-2 text-sm leading-6 text-gray-600">
+            Gérez les comptes utilisateurs et leurs rôles.
+        </p>
+
+        <div class="mt-5">
+            <span class="text-sm font-medium text-blue-600">
+                Bientôt disponible
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- Produits -->
+
+    <a
+        href="{{ path('app_product_index') }}"
+        class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+    >
+
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-green-100 text-green-600">
+
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M3.27 6.96L12 12l8.73-5.04M12 22V12"/>
+            </svg>
+
+        </div>
+
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">
+            Produits
+        </h3>
+
+        <p class="mt-2 text-sm leading-6 text-gray-600">
+            Consultez et gérez les produits de votre stock.
+        </p>
+
+        <div class="mt-5 text-sm font-medium text-green-600">
+            Gérer les produits →
+        </div>
+
+    </a>
+
+
+    <!-- Catégories -->
+
+    <a
+        href="{{ path('app_category_index') }}"
+        class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+    >
+
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-purple-600">
+
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M20.59 13.41L11 3.83A2 2 0 009.59 3H5a2 2 0 00-2 2v4.59A2 2 0 003.59 11l9.58 9.59a2 2 0 002.83 0l4.59-4.59a2 2 0 000-2.83z"/>
+                <circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/>
+            </svg>
+
+        </div>
+
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">
+            Catégories
+        </h3>
+
+        <p class="mt-2 text-sm leading-6 text-gray-600">
+            Organisez les produits avec vos catégories.
+        </p>
+
+        <div class="mt-5 text-sm font-medium text-purple-600">
+            Gérer les catégories →
+        </div>
+
+    </a>
+
+
+    <!-- Mouvements -->
+
+    <a
+        href="{{ path('app_stock_movement_index') }}"
+        class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+    >
+
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-600">
+
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 4v5h5M20 20v-5h-5"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M20 9a8 8 0 00-14.9-4M4 15a8 8 0 0014.9 4"/>
+            </svg>
+
+        </div>
+
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">
+            Mouvements de stock
+        </h3>
+
+        <p class="mt-2 text-sm leading-6 text-gray-600">
+            Suivez les entrées et sorties de marchandises.
+        </p>
+
+        <div class="mt-5 text-sm font-medium text-orange-600">
+            Voir les mouvements →
+        </div>
+
+    </a>
+
+
+    <!-- Tableau de bord -->
+
+    <a
+        href="{{ path('app_dashboard') }}"
+        class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+    >
+
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600">
+
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 19V5M4 19h16"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 16v-5M12 16V8M16 16v-3"/>
+            </svg>
+
+        </div>
+
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">
+            Tableau de bord
+        </h3>
+
+        <p class="mt-2 text-sm leading-6 text-gray-600">
+            Consultez la vue générale de votre gestion de stock.
+        </p>
+
+        <div class="mt-5 text-sm font-medium text-indigo-600">
+            Ouvrir le dashboard →
+        </div>
+
+    </a>
+
+
+    <!-- Paramètres -->
+
+    <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-600">
+
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M19.4 15a1.7 1.7 0 00.34 1.88l.06.06-1.9 1.9-.06-.06a1.7 1.7 0 00-1.88-.34 1.7 1.7 0 00-1.03 1.56V20h-2.7v-.09a1.7 1.7 0 00-1.03-1.56 1.7 1.7 0 00-1.88.34l-.06.06-1.9-1.9.06-.06A1.7 1.7 0 007.8 15a1.7 1.7 0 00-1.56-1.03H6V11.3h.24A1.7 1.7 0 007.8 10a1.7 1.7 0 00-.34-1.88L7.4 8.06l1.9-1.9.06.06a1.7 1.7 0 001.88.34A1.7 1.7 0 0012.27 5V4h2.7v1a1.7 1.7 0 001.03 1.56 1.7 1.7 0 001.88-.34l.06-.06 1.9 1.9-.06.06A1.7 1.7 0 0019.4 10a1.7 1.7 0 001.56 1.03H21v2.7h-.04A1.7 1.7 0 0019.4 15z"/>
+            </svg>
+
+        </div>
+
+        <h3 class="mt-5 text-lg font-semibold text-gray-900">
+            Paramètres
+        </h3>
+
+        <p class="mt-2 text-sm leading-6 text-gray-600">
+            Les paramètres avancés de StockPro seront disponibles ici.
+        </p>
+
+        <div class="mt-5 text-sm font-medium text-gray-500">
+            Bientôt disponible
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+{% endblock %}
