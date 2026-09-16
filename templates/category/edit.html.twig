@@ -1,13 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Category{% endblock %}
+{% block title %}Modifier la catégorie{% endblock %}
 
 {% block body %}
-    <h1>Edit Category</h1>
 
-    {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="mx-auto max-w-3xl px-6 py-10">
 
-    <a href="{{ path('app_category_index') }}">back to list</a>
+{# En-tête #}
+<div class="mb-8">
+    <a
+        href="{{ path('app_category_index') }}"
+        class="mb-4 inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-blue-600"
+    >
+        ← Retour aux catégories
+    </a>
 
-    {{ include('category/_delete_form.html.twig') }}
+    <h1 class="text-3xl font-bold text-gray-900">
+        Modifier la catégorie
+    </h1>
+
+    <p class="mt-2 text-gray-600">
+        Modifiez les informations de cette catégorie.
+    </p>
+</div>
+
+{# Formulaire #}
+<div class="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+
+    {{ include('category/_form.html.twig', {
+        'button_label': 'Enregistrer les modifications'
+    }) }}
+
+</div>
+
+{# Actions #}
+<div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-between">
+
+    <a
+        href="{{ path('app_category_index') }}"
+        class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 font-medium text-gray-700 hover:bg-gray-50"
+    >
+        ← Retour à la liste
+    </a>
+
+    <div>
+        {{ include('category/_delete_form.html.twig') }}
+    </div>
+
+</div>
+
+</div>
 {% endblock %}
