@@ -74,8 +74,29 @@
 
                     <button
                         type="submit"
-                        class="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700"
+                        class="inline-flex items-center 
+                        justify-center gap-1.5
+                        rounded-lg 
+                        bg-slate-700
+                        hover:bg-slate-800
+                        px-3 py-2
+                        text-sm font-medium text-white shadow-sm"
                     >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            class="h-4 w-4"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="m21 21-4.35-4.35m1.85-5.15a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+                            />
+                        </svg>
+
                         Rechercher
                     </button>
 
@@ -92,10 +113,25 @@
 
         </form>
         <a
-            href="{{ path('app_stock_movement_new') }}"
-            class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700"
+        href="{{ path('app_stock_movement_new') }}"
+        class="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700"
         >
-            + Nouveau mouvement
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="h-5 w-5"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 4.5v15m7.5-7.5h-15"
+                />
+            </svg>
+
+             Nouveau mouvement
         </a>
 
     </div>
@@ -191,7 +227,6 @@
                                 >
                                     Modifier
                                 </a>
-
                             </div>
 
                         </td>

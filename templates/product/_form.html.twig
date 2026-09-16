@@ -107,9 +107,35 @@
 <div class="flex items-center gap-3 pt-2">
 
     <button
-        type="submit"
-        class="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    type="submit"
+    class="inline-flex items-center gap-2 rounded-lg 
+    bg-indigo-600 px-5 py-2.5 text-sm font-medium 
+    text-white shadow-sm 
+    hover:bg-indigo-700 
+    focus:outline-none focus:ring-2 
+    focus:ring-indigo-500 
+    focus:ring-offset-2"
     >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="h-4 w-4"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5.25 5.25A2.25 2.25 0 0 1 7.5 3h7.879a2.25 2.25 0 0 1 1.591.659l2.371 2.371A2.25 2.25 0 0 1 20 7.621V18.75A2.25 2.25 0 0 1 17.75 21h-11.5A2.25 2.25 0 0 1 4 18.75V6.25a1 1 0 0 1 1.25-1Z"
+            />
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 3v5h8V3M8 21v-6h8v6"
+            />
+        </svg>
+
         {{ button_label|default('Enregistrer') }}
     </button>
 
